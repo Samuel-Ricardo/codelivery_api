@@ -1,8 +1,8 @@
 import { Inject, OnModuleInit } from "@nestjs/common";
 import { ClientKafka } from "@nestjs/microservices";
 import { Producer } from "@nestjs/microservices/external/kafka.interface";
-import { WebSocketGateway, WebSocketServer } from "@nestjs/websockets";
-import { Server } from "socket.io";
+import { SubscribeMessage, WebSocketGateway, WebSocketServer } from "@nestjs/websockets";
+import { Server, Socket } from "socket.io";
 
 @WebSocketGateway()
 export class RoutesGateway implements OnModuleInit {
@@ -18,6 +18,21 @@ export class RoutesGateway implements OnModuleInit {
  
   async onModuleInit() { this.kafkaProducer = await this.kafkaClient.connect() }
 
-
+  @SubscribeMessage('new-direction')
+  handleMessage(client: Socket, payload: {routeId:string}) {
+    this.kafkaProducer.send({
+      topic: 'route.new-direction',
+      messages: [
+        {
+          key: 'route.new-direction',
+          value: JSON.stringify({
+            routeId: payload.routeId,
+            clientId: client.id
+          })
+        }
+      ]
+    })
+    console.log(payload);
+  } 
 
 }
