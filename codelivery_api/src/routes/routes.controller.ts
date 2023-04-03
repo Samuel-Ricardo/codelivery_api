@@ -16,7 +16,11 @@ export class RoutesController implements OnModuleInit {
     private kafkaClient: ClientKafka
   ) {}
 
-  
+  async onModuleInit() {
+      this.kafkaProducer = await this.kafkaClient.connect();
+  }
+
+
   @Post()
   create(@Body() createRouteDto: CreateRouteDto) {
     return this.routesService.create(createRouteDto);
