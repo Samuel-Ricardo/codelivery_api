@@ -16,8 +16,8 @@ export class RoutesService {
     return 'This action adds a new route';
   }
 
-  findAll() {
-    return `This action returns all routes`;
+  findAll(): Promise<RouteDocument[]> {
+    return this.routeModel.find().exec();
   }
 
   findOne(id: number) {
