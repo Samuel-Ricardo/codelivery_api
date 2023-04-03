@@ -16,10 +16,16 @@ export class RoutesController implements OnModuleInit {
     @Inject('KAFKA_SERVICE')
     private kafkaClient: ClientKafka,
     private routeGateway: RoutesGateway,
-  ) {}
+  ) { }
 
   async onModuleInit() {
-      this.kafkaProducer = await this.kafkaClient.connect();
+    this.kafkaProducer = await this.kafkaClient.connect();
+    await this.kafkaProducer.connect()
+  
+    const events = this.kafkaProducer.events
+
+    this.kafkaProducer.on(events.REQUEST, () => {console.log("REQUEST SEND")})
+    this.kafkaProducer.on(events.CONNECT, () => {console.log("CONNECTED")})
   }
 
   @Post()
@@ -50,27 +56,31 @@ export class RoutesController implements OnModuleInit {
 
   @Get(':id/start')
   startRoute(@Param('id') id: string) {
+    console.log("START ROUTE: " + id)
     this.kafkaProducer.send({
       topic: 'route.new-direction',
       messages: [
         {
           key: 'route.new-direction',
-          value: JSON.stringify({routeId: id, clientId: ''})
+          value: JSON.stringify({ routeId: id, clientId: '1' })
         }
       ]
     })
   }
-  
+
   @MessagePattern('route.new-position')
   consumeNewPosition(
     @Payload()
     message: {
-      value: {
+//      value: {
         routeId: string;
         clientId: string;
         position: [number, number];
         finished: boolean;
-      };
+//      };
     },
-  ) { this.routeGateway.sendPosition(message.value) }
+  ) {
+    console.log({message})  
+    this.routeGateway.sendPosition(message)
+  }
 }
