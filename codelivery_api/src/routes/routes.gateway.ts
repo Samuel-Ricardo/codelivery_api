@@ -1,4 +1,4 @@
-import { Inject, OnModuleInit } from "@nestjs/common";
+import { Inject, Injectable, OnModuleInit } from "@nestjs/common";
 import { ClientKafka } from "@nestjs/microservices";
 import { Producer } from "@nestjs/microservices/external/kafka.interface";
 import { SubscribeMessage, WebSocketGateway, WebSocketServer } from "@nestjs/websockets";
@@ -27,7 +27,7 @@ export class RoutesGateway implements OnModuleInit {
           key: 'route.new-direction',
           value: JSON.stringify({
             routeId: payload.routeId,
-            clientId: client.id
+            clientId: '1',
           })
         }
       ]
@@ -43,7 +43,7 @@ export class RoutesGateway implements OnModuleInit {
       finished: boolean;
     }
   ){
-
+    console.log({data})
     const {clientId, ...rest} = data;
     const clients = this.server.sockets.sockets;
 
