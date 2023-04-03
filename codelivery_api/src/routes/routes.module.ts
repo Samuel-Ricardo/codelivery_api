@@ -4,14 +4,19 @@ import { RoutesController } from './routes.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Route, RouteSchema } from './entities/route.entity';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { RoutesGateway } from './routes.gateway';
 
 @Module({
-  imports:[
-    MongooseModule.forFeature([{name: Route.name, schema: RouteSchema}]),
+  imports: [
+    MongooseModule.forFeature([{ name: Route.name, schema: RouteSchema }]),
     ClientsModule.registerAsync([
       {
         name: 'KAFKA_SERVICE',
-        useFactory: () => ({
+        useFactory: () => {
+
+        console.log({PEDRO: process.env.KAFKA_BROKER})
+
+        return ({
           transport: Transport.KAFKA,
           options: {
             client: {
@@ -19,14 +24,18 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
               brokers: [process.env.KAFKA_BROKER],
             },
             consumer: {
-                groupId: !process.env.KAFKA_CONSUMER_GROUP_ID || process.env.KAFKA_CONSUMER_GROUP_ID ====  ? 'my-consumer-'+ Math.random() : process.env.KAFKA_CONSUMER_GROUP_ID
+              groupId:
+                !process.env.KAFKA_CONSUMER_GROUP_ID ||
+                  process.env.KAFKA_CONSUMER_GROUP_ID === ''
+                  ? 'my-consumer-' + Math.random()
+                  : process.env.KAFKA_CONSUMER_GROUP_ID,
             },
           },
         })
-      }
-    ])
-  ],
-  controllers: [RoutesController],
-  providers: [RoutesService]
+        },
+      },
+    ]),
+  ], controllers: [RoutesController],
+  providers: [RoutesService, RoutesGateway]
 })
-export class RoutesModule {}
+export class RoutesModule { }
