@@ -9,6 +9,12 @@ services:
       - 3000:3000
     volumes:
       - .:/home/node/app
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+    networks:
+      - default
+    depends_on:
+      - db
 
   db:
     image: mongo:4.4.4
@@ -20,7 +26,12 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=root
       - MONGO_INITDB_DATABASE=nest
-  
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+    networks:
+      - default
+
+
   mongo-express:
     image: mongo-express
     restart: always
@@ -34,3 +45,14 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=root
     depends_on:
       - db
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+    networks:
+      - default
+
+
+networks:
+  default:
+    external: true
+    name: apache_kafka_default
+      
