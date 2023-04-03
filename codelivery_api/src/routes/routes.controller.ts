@@ -1,12 +1,22 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Injectable, Inject, OnModuleInit } from '@nestjs/common';
 import { RoutesService } from './routes.service';
 import { CreateRouteDto } from './dto/create-route.dto';
 import { UpdateRouteDto } from './dto/update-route.dto';
+import { Producer } from '@nestjs/microservices/external/kafka.interface';
+import { ClientKafka } from '@nestjs/microservices';
 
 @Controller('routes')
-export class RoutesController {
-  constructor(private readonly routesService: RoutesService) {}
+export class RoutesController implements OnModuleInit {
 
+  private kafkaProducer: Producer;
+
+  constructor(
+    private readonly routesService: RoutesService,
+    @Inject('KAFKA_SERVICE')
+    private kafkaClient: ClientKafka
+  ) {}
+
+  
   @Post()
   create(@Body() createRouteDto: CreateRouteDto) {
     return this.routesService.create(createRouteDto);
