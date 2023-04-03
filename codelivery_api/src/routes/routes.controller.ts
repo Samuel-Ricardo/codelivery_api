@@ -22,11 +22,6 @@ export class RoutesController implements OnModuleInit {
       this.kafkaProducer = await this.kafkaClient.connect();
   }
 
-  
-  handleMessage(){
-
-  }
-
   @Post()
   create(@Body() createRouteDto: CreateRouteDto) {
     return this.routesService.create(createRouteDto);
@@ -50,5 +45,19 @@ export class RoutesController implements OnModuleInit {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.routesService.remove(+id);
+  }
+
+
+  @Get(':id/start')
+  startRoute(@Param('id') id: string) {
+    this.kafkaProducer.send({
+      topic: 'route.new-direction',
+      messages: [
+        {
+          key: 'route.new-direction',
+          value: JSON.stringify({routeId: id, clientId: ''})
+        }
+      ]
+    })
   }
 }
