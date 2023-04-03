@@ -14,7 +14,7 @@ import { RoutesGateway } from './routes.gateway';
         name: 'KAFKA_SERVICE',
         useFactory: () => {
 
-        console.log({PEDRO: process.env.KAFKA_BROKER})
+        console.log({ENVCHECK: process.env.KAFKA_BROKER})
 
         return ({
           transport: Transport.KAFKA,
