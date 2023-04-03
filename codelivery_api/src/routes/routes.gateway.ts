@@ -35,4 +35,23 @@ export class RoutesGateway implements OnModuleInit {
     console.log(payload);
   } 
 
+  sendPosition(
+    data: {
+      clientId: string;
+      routeId: string;
+      position: [number, number];
+      finished: boolean;
+    }
+  ){
+
+    const {clientId, ...rest} = data;
+    const clients = this.server.sockets.sockets;
+
+    if (!(clientId in clients)) {
+      console.error('Client not exists :/ refresh React Application and resend new direction again.')
+      return; 
+    }
+
+    clients[clientId].emit('new-position', rest);
+  }
 }
