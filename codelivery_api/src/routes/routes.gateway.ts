@@ -15,5 +15,9 @@ export class RoutesGateway implements OnModuleInit {
     @Inject('KAFKA_SERVICE')
     private kafkaClient: ClientKafka,
   ){}
-  
+ 
+  async onModuleInit() { this.kafkaProducer = await this.kafkaClient.connect() }
+
+
+
 }
