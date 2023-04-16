@@ -1,3 +1,5 @@
+.docker/k8s/configmap.yaml
+
 # compiled output
 /dist
 /node_modules
