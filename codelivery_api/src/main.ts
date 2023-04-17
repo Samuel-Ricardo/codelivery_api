@@ -8,7 +8,7 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule, {cors:true});
 
-  console.log({TOMI: process.env.KAFKA_BROKER})
+  console.log({LOADED_ENVS: process.env})
 
   app.connectMicroservice({
     transport: Transport.KAFKA,
