@@ -109,10 +109,6 @@
 
 <br>
 
-This application is hosted on Google Cloud Platform with Kubernetes - [GCP]
-
-<br>
-
 <p align="justify">
   In Resume this project have a Microsservice responsible to start and manage a travel returning the travel data in real time by streams, kafka recive this data and garant that all comunications between applications work together without data loses and with scalable Perfomance of Kafka platform.
 </p>
@@ -124,6 +120,16 @@ This application is hosted on Google Cloud Platform with Kubernetes - [GCP]
 <p align="justify">
     All data is tracked and stored in Elastic Search with kafka intermediator that provide by your platform the Kibana that create amazing views to handle with Data Analytics building beautiful graphics for example.
 </p>
+
+<br>
+
+This application is hosted on Google Cloud Platform with Kubernetes - [GCP]
+
+<br>
+
+> <a href="https://cloud.google.com/?hl=pt-br"> <img width="128px" src="https://i.pcmag.com/imagery/reviews/02yVL9f8Jw1atwoG6sgFZDH-7..v1569482492.jpg"/> </a>
+
+<br>
 
 #
    <p id="routes"/>
