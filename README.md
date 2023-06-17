@@ -103,8 +103,9 @@
 <img src="https://github.com/Samuel-Ricardo/travel_simulator/raw/main/readme_files/scheme.png" />
 
 - Front-End     : NextJS   | [ [repositories](https://github.com/Samuel-Ricardo/codelivery-site)  ] 
-- microsservice : GO Lang  | [ [repositories](https://github.com/Samuel-Ricardo/travel_simulator/tree/main)  ]
 - Back-End      : NestJS   | [ [repositories](https://github.com/Samuel-Ricardo/codelivery_api)  ]
+- microsservice : GO Lang  | [ [repositories](https://github.com/Samuel-Ricardo/travel_simulator/tree/main)  ]
+- Devops        : Kafka | Elastic  - [ [repositories](https://github.com/Samuel-Ricardo/travel_simulator/tree/main)  ]
 
 <br>
 
@@ -152,9 +153,9 @@ This application use `Docker` so you dont need to install and cofigurate anythin
 
 <br>
 
-<p align="justify">
-    Navigate to project folder `$ cd ./codelivery_api/` and run it using `docker-compose`
-</p>
+
+Navigate to project folder ` $ cd ./codelivery_api/ ` and run it using ` docker-compose `
+
 
 ```bash
 
