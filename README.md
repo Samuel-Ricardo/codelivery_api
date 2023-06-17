@@ -56,6 +56,12 @@
 - This Back-End is hosted on Google Cloud Platform - [GCP] With Kubernetes 
 - Current Version: <b> 1.0.0 </b>
 
+<br/>
+
+- Front-End     : NextJS   | [ [repositories](https://github.com/Samuel-Ricardo/codelivery-site)  ] 
+- microsservice : GO Lang  | [ [repositories](https://github.com/Samuel-Ricardo/travel_simulator/tree/main)  ]
+- Back-End      : NestJS   | [ [repositories](https://github.com/Samuel-Ricardo/codelivery_api)  ]
+
 #
 
 <br>
@@ -91,4 +97,11 @@
 <h2 id="app">
   💻 | Application:
 </h2>
+
+<img src="https://github.com/Samuel-Ricardo/travel_simulator/raw/main/readme_files/scheme.png" />
+
+- Front-End     : NextJS   | [ [repositories](https://github.com/Samuel-Ricardo/codelivery-site)  ] 
+- microsservice : GO Lang  | [ [repositories](https://github.com/Samuel-Ricardo/travel_simulator/tree/main)  ]
+- Back-End      : NestJS   | [ [repositories](https://github.com/Samuel-Ricardo/codelivery_api)  ]
+
 
