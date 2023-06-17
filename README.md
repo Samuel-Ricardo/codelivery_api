@@ -60,4 +60,35 @@
 
 <br>
 
+<h2 id="techs">
+  :building_construction: | Technologies and Concepts Studied:
+</h2>
+
+> <a href='https://go.dev/'> <img width="48px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain-wordmark.svg" /> </a>
+
+- NestJS
+- Websockets
+- SocketIO
+- Typescript
+- Mongoose
+- JS
+- Test
+- Jest  
+- Kafka
+- Kubernetes
+- Docker
+- Perfomance
+- Event Driven Architeture
+- Scalability
+- Real Time
+
+> Among Others...
+
+<br>
+
+#
+
+<h2 id="app">
+  💻 | Application:
+</h2>
 
