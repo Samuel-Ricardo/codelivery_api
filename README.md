@@ -25,4 +25,39 @@
 
 #
 
- 
+<br>
+
+<p id="project"/>
+
+<h2>  | :artificial_satellite: About:  </h2>
+
+<p align="justify">
+  This project is a application of a complete Full Cycle project, with amazing technologies like NextJS for front-end, NestJS for back-end, PostgreSQL database, GO Lang for microsservice, Docker & Kubernetes for devops, metrics with Elastic Search & Kibana, Message / Event Driven Architeture with Kafka and more.
+</p>
+
+<img src="https://github.com/Samuel-Ricardo/travel_simulator/raw/main/readme_files/techs.png"/> 
+
+<p align="justify">
+    The purpose of this Back-End is work as intermediator of front-end application and all travel related services and datas, it will send request to start a travel and will monmitoring all data, handling and sending it back to fron-end as data stream, that will have the state and relevant informations about it.
+</p>
+
+<p align="justify">
+    This application use NestJS to manage all infrastructure because it's very good for work with microsservices and make easly connections with technologies used on this full cycle project like Kafka and work good with serve sent events (Event Driven Architeture).
+</p>
+
+<p align="justify">
+    I use Kubernetes that is a container orchestration system that can be used to deploy and manage containers. It is a way to manage the running containers of a system, and to let the system run in a container environment.
+</p>
+
+> <a href="https://samuel-ricardo.github.io/"> <img src="https://github.com/Samuel-Ricardo/travel_simulator/raw/main/readme_files/app_preview.png"> </a>
+
+  <br>
+  
+- This Back-End is hosted on Google Cloud Platform - [GCP] With Kubernetes 
+- Current Version: <b> 1.0.0 </b>
+
+#
+
+<br>
+
+
