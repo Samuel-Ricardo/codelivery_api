@@ -109,6 +109,22 @@
 
 <br>
 
+This application is hosted on Google Cloud Platform with Kubernetes - [GCP]
+
+<br>
+
+<p align="justify">
+  In Resume this project have a Microsservice responsible to start and manage a travel returning the travel data in real time by streams, kafka recive this data and garant that all comunications between applications work together without data loses and with scalable Perfomance of Kafka platform.
+</p>
+
+<p>
+    The Back-End send by kafka a event to microsservice that trigger a start of a route, after that, the route data like position and if is it finished are send to kafka, the back end listen the event by kafka and get data to handle it and send to front end, that render all date with the travel route and real time position, cleaning it when finished.
+</p>
+
+<p align="justify">
+    All data is tracked and stored in Elastic Search with kafka intermediator that provide by your platform the Kibana that create amazing views to handle with Data Analytics building beautiful graphics for example.
+</p>
+
 #
    <p id="routes"/>
    
@@ -136,13 +152,13 @@
 ### Open your Git Terminal and clone this repository
 
 ```git
-  $ git clone "git@github.com:Samuel-Ricardo/travel_simulator.git"
+  $ git clone "git@github.com:Samuel-Ricardo/codelivery_api.git"
 ```
 
 ### Make Pull
 
 ```git
-  $ git pull "git@github.com:Samuel-Ricardo/travel_simulator.git"
+  $ git pull "git@github.com:Samuel-Ricardo/codelivery_api.git"
 ```
 
 <br>
