@@ -39,7 +39,7 @@
 <img src="https://github.com/Samuel-Ricardo/travel_simulator/raw/main/readme_files/techs.png"/> 
 
 <p align="justify">
-    The purpose of this Back-End is work as intermediator of front-end application and all travel related services and datas, it will send request to start a travel and will monmitoring all data, handling and sending it back to fron-end as data stream, that will have the state and relevant informations about it.
+    The purpose of this Back-End is work as intermediator of front-end application and all travel related services and datas with Mongo Data Base, it will send request to start a travel and will monmitoring all data, handling and sending it back to fron-end as data stream, that will have the state and relevant informations about it.
 </p>
 
 <p align="justify">
@@ -71,10 +71,11 @@
   :building_construction: | Technologies and Concepts Studied:
 </h2>
 
-> <a href='https://go.dev/'> <img width="48px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain-wordmark.svg" /> </a>
+> <a href='https://nestjs.com/'> <img width="48px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain-wordmark.svg" /> </a>
 
 - NestJS
 - Websockets
+- MongoDB
 - SocketIO
 - Typescript
 - Mongoose
@@ -122,3 +123,61 @@
 <p>   - Start a travel - POST - /[id]/start </p>
    
 #
+
+#
+
+<h2 id="run-project"> 
+   👨‍💻 | How to use
+</h2>
+
+<br>
+
+### Open your Git Terminal and clone this repository
+
+```git
+  $ git clone "git@github.com:Samuel-Ricardo/travel_simulator.git"
+```
+
+### Make Pull
+
+```git
+  $ git pull "git@github.com:Samuel-Ricardo/travel_simulator.git"
+```
+
+<br>
+
+This application use `Docker` so you dont need to install and cofigurate anything other than docker on your machine.
+
+> <a target="_blank" href="https://www.docker.com/"> <img width="48px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" /> </a>
+
+<br>
+
+<p align="justify">
+    Navigate to project folder `$ cd ./codelivery_api/` and run it using `docker-compose`
+</p>
+
+```bash
+
+  # After setup docker environment just run this commmand on root project folder:
+
+  $ docker-compose up --build   # For First Time run this command
+
+  $ docker-compose up           # to run project
+
+
+```
+
+```bash
+
+  #Apps Running on:
+
+  $ API: http://localhost:3000
+
+  $ Mongo: http://localhost:8081
+
+  See more: ./codelivery_api/docker-compose.yaml
+
+```
+
+#
+
