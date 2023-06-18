@@ -33,7 +33,7 @@
 <h2>  | :artificial_satellite: About:  </h2>
 
 <p align="justify">
-  This project is a application of a complete Full Cycle project, with amazing technologies like NextJS for front-end, NestJS for back-end, PostgreSQL database, GO Lang for microsservice, Docker & Kubernetes for devops, metrics with Elastic Search & Kibana, Message / Event Driven Architeture with Kafka and more.
+  This project is a application of a complete Full Cycle project, with amazing technologies like NextJS for front-end, NestJS for back-end, MongoDB database, GO Lang for microsservice, Docker & Kubernetes for devops, metrics with Elastic Search & Kibana, Message / Event Driven Architeture with Kafka and more.
 </p>
 
 <img src="https://github.com/Samuel-Ricardo/travel_simulator/raw/main/readme_files/techs.png"/> 
@@ -58,6 +58,8 @@
 - Current Version: <b> 1.0.0 </b>
 
 <br/>
+
+#
 
 - Front-End     : NextJS   | [ [repositories](https://github.com/Samuel-Ricardo/codelivery-site)  ] 
 - microsservice : GO Lang  | [ [repositories](https://github.com/Samuel-Ricardo/travel_simulator/tree/main)  ]
@@ -127,7 +129,7 @@ This application is hosted on Google Cloud Platform with Kubernetes - [GCP]
 
 <br>
 
-> <a href="https://cloud.google.com/?hl=pt-br"> <img width="128px" src="https://i.pcmag.com/imagery/reviews/02yVL9f8Jw1atwoG6sgFZDH-7..v1569482492.jpg"/> </a>
+> <a target="justify" href="https://cloud.google.com/?hl=pt-br"> <img width="128px" src="https://i.pcmag.com/imagery/reviews/02yVL9f8Jw1atwoG6sgFZDH-7..v1569482492.jpg"/> </a>
 
 <br>
 
